@@ -1,6 +1,6 @@
 (function connect() {
     // Connect to the server
-    let socket = io.connect('https://super-duper-parakeet-9grg454gw492766w-3000.app.github.dev/');
+    let socket = io.connect('localhost:3000');
 
     // Dom elements for changing the username
     let username = document.querySelector('#username');

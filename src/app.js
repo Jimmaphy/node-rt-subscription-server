@@ -30,18 +30,18 @@ socket.on('connection', connection => {
     connection.username = 'Anonymous';
 
     // Handle a username change
-    connection.on('changeUsername', data => {
-        socket.username = data.username;
+    connection.on('change_username', data => {
+        connection.username = data.username;
     });
 
     // Handle new messages
-    connection.on('new_messages', data => {
+    connection.on('new_message', data => {
         console.log('New message');
-        socket.sockets.emits('receive_message', {message: data.message, username: socket.username});
+        socket.sockets.emit('receive_message', {message: data.message, username: connection.username});
     });
 
     // Handle users typing
     connection.on('typing', data => {
-        socket.broadcast.emit('typing', {username: socket.username});
+        connection.broadcast.emit('typing', {username: connection.username});
     })
 });
