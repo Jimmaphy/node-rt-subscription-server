@@ -23,10 +23,15 @@ const server = app.listen(process.env.PORT || 3000, () => {
 // Setup the socket
 const socket = sockets(server)
 
+// Update all clients
+function update() {
+  socket.sockets.emit('receive_message', {message: "update", username: "[System]"});
+}
+
 // Enable the socket
 socket.on('connection', connection => {
   // Show that a user has connected
-  console.log('New user connected');
+  console.log('New client connected...');
   
   // Set the default username
   connection.username = 'Anonymous';
@@ -34,10 +39,11 @@ socket.on('connection', connection => {
   // Handle a username change
   connection.on('change_username', data => {
     connection.username = data.username;
+    update();
   });
 
   // Handle new messages
-  connection.on('new_message', data => {
+  connection.on('new_message', data => {j
     console.log('New message');
     socket.sockets.emit('receive_message', {message: data.message, username: connection.username});
   });
