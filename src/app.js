@@ -8,10 +8,10 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 app.use(express.static('./src/public'));
+app.use(express.json());
 
 // Create the routes
 app.get('/', (req, res) => {
-  sqlite.write('hello world!');
   res.render('index');
 });
 
@@ -28,6 +28,18 @@ function update() {
   socket.sockets.emit('receive_message', {message: "update", username: "[System]"});
 }
 
+// Create the post request route
+app.post('*', (req, res) => {
+  // Read the object body
+  let body = req.body;
+  
+  // Run the update function
+  update();
+
+  // Return a response to the client
+  res.status(200).send('OK');
+})
+
 // Enable the socket
 socket.on('connection', connection => {
   // Show that a user has connected
@@ -43,7 +55,7 @@ socket.on('connection', connection => {
   });
 
   // Handle new messages
-  connection.on('new_message', data => {j
+  connection.on('new_message', data => {
     console.log('New message');
     socket.sockets.emit('receive_message', {message: data.message, username: connection.username});
   });
