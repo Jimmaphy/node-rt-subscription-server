@@ -2,52 +2,113 @@
 
 <html lang="en">
     <head>
-        <!-- Meta data -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Meta data -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Title -->
-        <title>Simple realtime chatroom</title>
+      <!-- Title -->
+      <title>Simple realtime chatroom</title>
 
-        <!-- References -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">    
+      <!-- References -->
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
     </head>
 
     <body>
-        <div class="container">
+      <div class="container">
+        <div class="row my-4">
+          <div class="col-12">
             <div class="title">
-                <h3>Realtime Chat Room</h3>
+              <h1>ConneqTech Data Collection Server</h1>
             </div>
-
-            <div class="card">
-                <div class="card-header">Anonymous</div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="username" placeholder="Change your username">
-                        
-                        <div class="input-group-append">
-                            <button class="btn btn-warning" type="button" id="usernameBtn">Change</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="message-box">
-                    <ul class="list-group list-group-flush" id="message-list"></ul>
-                    <div class="info"></div>
-                </div>
-
-                <div class="card-footer">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="message" placeholder="Send a new message">
-                        <div class="input-group-append">
-                            <button class="btn btn-success" type="button" id="messageBtn">Send</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
-        <script src="/js/chatroom.js"></script>    
+        <div class="row mb-4">
+          <div class="col-12 col-md-3 mb-2">
+            <div class="card">
+              <div class="card-header text-center">Bicycle</div>
+              <div class="card-body text-center">
+                <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/1000x1000" alt="">
+              </div>
+
+              <div class="message-box">
+                <ul class="list-group list-group-flush" id="message-list"></ul>
+                <div class="info"></div>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-success w-100" type="button" id="messageBtn">Watch</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <div class="card">
+              <div class="card-header text-center">Bicycle</div>
+              <div class="card-body text-center">
+                <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/1000x1000" alt="">
+              </div>
+
+              <div class="message-box">
+                <ul class="list-group list-group-flush" id="message-list"></ul>
+                <div class="info"></div>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-success w-100" type="button" id="messageBtn">Watch</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <div class="card">
+              <div class="card-header text-center">Bicycle</div>
+              <div class="card-body text-center">
+                <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/1000x1000" alt="">
+              </div>
+
+              <div class="message-box">
+                <ul class="list-group list-group-flush" id="message-list"></ul>
+                <div class="info"></div>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-success w-100" type="button" id="messageBtn">Watch</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <div class="card">
+              <div class="card-header text-center">Bicycle</div>
+              <div class="card-body text-center">
+                <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/1000x1000" alt="">
+              </div>
+
+              <div class="message-box">
+                <ul class="list-group list-group-flush" id="message-list"></ul>
+                <div class="info"></div>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-success w-100" type="button" id="messageBtn">Watch</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header text-center">Bicycle</div>
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+      <script src="/js/chatroom.js"></script>    
     </body>
 </html>

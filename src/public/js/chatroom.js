@@ -26,7 +26,7 @@
         socket.emit('new_message', {message: message.value});
         message.value = '';
     });
-
+  
     // Receiving messages
     socket.on('receive_message', data => {
         console.log(data);
